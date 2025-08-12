@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWKS to PEM Converter</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JWKS to PEM Converter</h1>
+        
+        <div class="converter">
+            <div class="section">
+                <h3>Input JWKS</h3>
+                <div class="controls">
+                    <button id="clearAll" class="secondary">Clear</button>
+                </div>
+                <textarea id="jwksInput" placeholder='Paste your single JWKS key here...
+
+Example:
+{
+  "kty": "RSA",
+  "e": "AQAB", 
+  "kid": "key-1",
+  "n": "base64url-encoded-modulus"
+}'></textarea>
+                <div class="controls">
+                    <button id="convertBtn" class="primary">Convert to PEM</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>PEM Output</h3>
+                <div class="controls">
+                    <button id="copyPem" class="secondary">Copy</button>
+                    <button id="downloadPem" class="secondary">Download</button>
+                </div>
+                <div id="output" class="output"></div>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>Development Tool Disclaimer</h3>
+            <p><strong>⚠️ This tool is intended for development and testing purposes only.</strong> 
+            The author takes no responsibility for any issues that may arise from using this tool in production environments. 
+            Always validate and test cryptographic keys thoroughly before using them in production systems.</p>
+            
+            <h3>Supported Key Types</h3>
+            <ul>
+                <li><strong>RSA:</strong> Keys with "kty": "RSA"</li>
+                <li><strong>EC:</strong> Keys with "kty": "EC" (P-256, P-384, P-521 curves)</li>
+            </ul>
+            
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://tools.ietf.org/html/rfc7517" target="_blank">RFC 7517 - JSON Web Key (JWK)</a></li>
+                <li><a href="https://tools.ietf.org/html/rfc7515" target="_blank">RFC 7515 - JSON Web Signature (JWS)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail" target="_blank">PEM Format</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
