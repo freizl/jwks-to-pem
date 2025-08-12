@@ -50,3 +50,6 @@ Supported EC curves:
 
 ⚠️ This tool runs entirely in your browser - no data is transmitted to any external servers. Your keys remain private and secure on your local machine.
 
+## Alternative
+
+1. https://8gwifi.org/jwkconvertfunctions.jsp
